@@ -1,0 +1,181 @@
+/* root는 css 전역변수 (*)는 css전체선택자 모든형태의 모든요소를 선택함
+css var() 함수는 사용자지정속성 
+var(<custom-property-name>),<declaration-value>?)
+.sidebar로 하면 div class="sidebar" 생성
+p-stats-text 하면 p class="p
+div.times 하면 div class="times" 생성
+container 속성
+-> justify-content(가로축-중심축) , align-items(세로축-교차축)
+1em -> 16px x 1 = 16px
+0.5em -> 16px x 0.5 = 8px
+flex-grow CSS property 는 flex-item 요소가, flex-container 요소 내부에서 할당 가능한 공간의 정도를 선언합니다.
+min-height : height 속성의 사용값이 자신보다 작아지는걸 방지 최소 높이 설정
+ border-radius 속성은 요소 테두리 경계의 꼭짓점을 둥글게 만듭니다
+  두 개의 값을 사용해 타원형 꼭짓점을 적용
+  top 음수일때 밑에 양수일때 위에
+*/
+:root {
+  --background-color: #0d1323;
+  --background-light: #1d204b;
+  --color-blue: #5746ea;
+
+  --color-orange: #ff8b64;
+  --color-light-blue:#56c2e6;
+  --color-red : #ff5e7d;
+  --color-green:#4bcf83;
+  --color-purple:#7434d1;
+  --color-yellow:#f1c75b;
+
+}
+
+* {
+  margin:0;
+  padding:0;
+}
+html,body {
+  min-height: 100vh;
+}
+body{
+  background-color: var(--background-color);
+  
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  
+  width: 800px;
+  margin: 3em;
+  max-width: 800px;
+  display: flex;
+}
+.slidebar {
+  background-color: var(--background-light);
+ 
+  border-radius: 10px;
+}
+.tracks {
+  
+  flex-grow: 1;
+  margin-left: 1.5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  grid-gap : 1.5em; 
+}
+.profile {
+  background-color: var(--color-blue);
+  padding: 1.5em;
+  border-radius: 10px;
+}
+.profile img{
+ height :  60px;
+ width: 60px;
+ border: 3px solid #fff;
+ border-radius: 50%;
+ margin-bottom: 2em;
+
+}
+.stats-text {
+  font-size: .8em;
+  color:#cecece;
+
+
+
+
+}
+.name {
+  font-size: 1.5em;
+  color:#fff;
+  margin-top: .3em;
+}
+.times {
+  padding: 1em 1.5em;
+  color: rgba(255, 255,255, 0.5);
+}
+.times p.active {
+  color: rgba(255, 255,255, 0.9);
+  margin: .5em 0;
+
+}
+.track-item {
+  background-color:#fff;
+  border-radius: 10px;
+  background-color: var(--background-light);
+  color:#fff;
+  padding: 1em;
+  position: relative;
+  margin-top: 14px;
+}
+.track-item .nav {
+  display: flex;
+  justify-content: space-between;
+
+}
+.track-item .nav span:nth-child(2) {
+  margin-top: -.3em;
+  font-weight: bolder;
+
+}
+.track-item .time {
+  font-size: 2em;
+  margin-top: .5em;
+
+}
+.track-item .previous {
+  color: rgba(255, 255,255, 0.5);
+}
+.track-item::after {
+ content: '';
+ height: 100%;
+ width: 100%;
+ display: block;
+
+ position: absolute; 
+ top:-15px;
+ left:0;
+ z-index: -1;
+ border-radius: 10px;
+ transition: top .3s;
+
+}
+.track-item:hover::after {
+  top : -30px;
+
+}
+.track-item:nth-child(1)::after {
+  background-color: var(--color-orange);
+
+}
+.track-item:nth-child(2)::after {
+  background-color: var(--color-light-blue);
+  
+}
+.track-item:nth-child(3)::after {
+  background-color: var(--color-red);
+  
+}
+.track-item:nth-child(4)::after {
+  background-color: var(--color-green);
+  
+}
+.track-item:nth-child(5)::after {
+  background-color: var(--color-purple);
+  
+}
+.track-item:nth-child(6)::after {
+  background-color: var(--color-yellow);
+  
+}
+@media (max-width: 630px) {
+  .container{
+    flex-direction: column;
+  }
+  .slidebar {
+    margin-bottom: 1.5em;
+  }
+  .tracks {
+    margin-left: 0;
+
+  }
+}

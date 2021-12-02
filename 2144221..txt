@@ -1,0 +1,24 @@
+// IntStream 
+   // int [] a = widgets.stream().filter(w->getColor() == Red).mapToInt(w->w.getWeight()).sum();
+   //IntStream.range(1,5) 1,2,3,4에 대한 int스트림 생성
+   //IntStream.range(0,a.length) 0~a.length-1에 대한 int스트림 생성
+String형 문자열 int로 문자열 자르기
+substring() 메소드
+append() 기존 문자열의 뒤쪽에 문자열 추가하는기능
+ex StringBuffer a = "123", 
+append("4")
+return 
+// a = "1234"
+StringBuilder는 String과 문자열을 더할때 기존의 데이터에 더하는방식
+StringBuilder에 append()가 있음
+Math.sqrt는 double형이기에 int로 변환
+Math.ceil또한 double형이기에 int로 형변환
+ceil? ex -10.675 면 Math.ceil(-10.675) -> Math.ceil(-10)
+입력인자값보다 크거나 같은 가장 작은 정수값 반환
+Map<key,value>
+Map에 키나 값이있는지 확인하는 함수
+ containsKey,containsValue
+map.put("A","aaa") -> HashMap에 키,값 저장 map<key,value> key 중복 x value 중복가능
+Map<Integer,Boolean> -> int,true or false
+Map은 검색과 범위데이터가아닌 특정데이터를 캐치해야할떄 ex 로또번호
+ArrayList는 데이터를 순차적으로받고,특정데이터가아닌 원하는 데이터범위를 순차적으로 표현할떄

@@ -1,0 +1,154 @@
+
+classList
+classList.add,remove : 클래스를 필요에 따라 삽입,제거한다
+classList.contains 값이 존재하는지 체크함 true or false
+classList.toggle() 클래스값이 있는지 체크하고 없으면 더하고 있으면 제거한다
+
+input요소 : text,password,radio,checkbox,file,select,textarea,button,submit,fieldset 등 
+filedset= 	form요소와 관련 데이터들을 하나로 묶어주는 역할 . ex)legend-filedset요소의 제목
+datalist : input 요소에 대해 미리 정의된 옵션 리스트 명시하는 요소(list속성값-datalist id값이 반드시 일치)  , selector같은 <option> 요소
+keygen: 사용자가 입력한 데이터를 암호화하여 서버로 전송,서버는 암호화된 키를 가지고 사용자 인증을 수행  <keygen 속성 = "속성값">
+ouput : 스크립트에서 실행된 계산결과를 바로 보여주는 요소
+number(숫자입력),range(범위지정),color,data,time,datatime-local,month,week,email,url,tel,search
+data는 날짜 label for값이랑 input id 값 같아야됌 
+color:색깔 고르기 label for값이랑 input id 값 같아야됌
+range: 범위 label for값이랑 input id 값 같아야됌
+time :  label for값이랑 input id 값 같아야됌
+datatime : 사용자가 날짜와 시간을 함께 선택할수있음 
+datatime-local : 사용자가 날짜와 시간을 (시간대 없이) 선택할 수 있게 해준다. for값이랑 input id 값 같아야됌
+email : for값이랑 input id 값 같아야됌 
+
+
+
+
+input 요소 속성
+value,readonly,disabled,maxlength,size
+input.value는 <input>요소의 초깃값을 명시 
+readonly: <input> 요소의 입력 필드가 읽기 전용임을 명시합니다,boolean 속성을 가짐 명시하면 true,명시안하면 false
+disabled : disabled 속성이 명시된 입력 필드의 값은 서버로 제출되지 않지만
+maxlength : <input> 요소에 입력할 수 있는 최대 문자수를 명시합니다.
+size : <input> 요소의 너비를 문자수(in characters) 단위로 명시합니다.
+<input size="숫자"> ex. input type이 email,password,search,tel,text,url 일때만
+
+
+
+html5 form 요소 
+autocomplete:form 요소나 input요소에 입력된 정보를 자동 저장할지에 대한 여부. 값이 on 설정시 브라우저는 사용자가 입력하는 정보를 자동으로 저장 : 텍스트와 숫자를 허용하는 <input>,<textarea>,<select>,<form>요소에 사용
+novalidate:입력한정보(data)를 전송할떄 그 정보의 유효성검사에대한 여부
+! url,email 같은 input타입에 이 속성넣을시 유효성 검사 X
+autofocus:웹페이지 로드될때 속성이 적용된 input요소에 자동으로 포커스가 가도록한다 : boolean 속성임 on,off 기본값은 false
+form:form요소가 둘이상일 경우 id속성값 연결 가능
+formaction:입력한 정보를 전송할때 전달될 서버측 파일을 명시 input-submit,image 사용가능
+formaen
+form 태그의 enctype속성은 form 요소의 method 속성값이 "post"인경우에만 사용 가능
+application/x-www-form-urlencoded 	
+기본값으로, 모든 문자들은 서버로 보내기 전에 인코딩됨을 명시함.
+multipart/form-data
+	
+모든 문자를 인코딩하지 않음을 명시함.
+
+이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함.
+text/plain
+공백 문자(space)는 "+" 기호로 변환하지만, 나머지 문자는 모두 인코딩되지 않음을 명시함.
+
+웹접근성이 필요한 이유:
+시멘트 구조(HTML 구조)로 할시 이점은 개발에 용이,모바일 사용이 편리(용량은 줄어들고 반응형을 더쉽게만듬)
+SEO(검색엔진최적화)에 적합함
+이전 HTML 마크업은 인라인-블록요소로 구분했으나, HTML5에와서는 콘텐츠 모델에 의거,구분
+메타데이터:head영역에 들어가는 요소들, 문서의 표현이나 동작을 수정하거나 다른문서를 불러올떄 사용
+ex) <base>, <link>, <meta>, <script>, <style>, <title> : base : 해당문서의 모든 상대주소에 대한 기본URL이나 target속성값정의할때 사용, 하나의문서에는 최대 하나의 base요소만 존재 
+플로우 콘텐츠 : 텍스트나 내장 콘텐츠를 포함하는 요소들
+<a>,​​​​​​ <abbr>, <address>, <article>, <aside>, <audio>, <b>, <bdo>, <bdi>, <blockquote>, <br>, <button>, <canvas>, <cite>, <code>, <data>, <datalist>, <del>
+, <details>, <dfn>, <div>, <dl>, <em>, <embed>, <fieldset>, <figure>, <footer>, <form>, <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <header>, <hgroup>, <hr>, <i>, <iframe>, <img>, <input>, <ins>, <kbd>, <label>, <main>, <map>, <mark>, <math>, <menu>, <meter>, <nav>, <noscript>, <object>, <ol>, <output>, <p>, <picture>, <pre>, <progress>, <q>, <ruby>, <s>, <samp>, <script>, <section>, <select>, <small>, <span>, <strong>, <sub>, <sup>, <svg>, <table>, <template>, <textarea>, <time>, <ul>, <var>, <video>, <wbr>, 텍스트
+bdo : <bdo dir="rtl">오른쪽부터 왼쪽방향으로 쓰짐
+bdi : 텍스트의 방향성을 미리 알 수 없는 사용자에의해 문서에 포함시킬때
+blockquote : 다른출처로부터 인용된블록을 정의할떄 사용
+canvas : 웹페이지에 그래픽 주는 container 역할 하는애
+cite : 창작물의 제목을 정의
+code : 컴퓨터 코드(code)의 일부분을 나타낼 때 사용
+data : 사람이읽을수있는 형태의 값을 모두 제공 , 대신 시간이나 날짜 관련데이터라면 <data>대신 <time>
+del : 텍스트 한가운데 라인(line)을 추가하여 문서에서 삭제된 텍스트를 표현할 때 사용
+dfn :  HTML에서 용어(term)의 정의를 나타낼 때 사용
+dl : 용어(term)와 그에 대한 설명(description)을 리스트 형식으로 정의할 때 사용 ul - li이랑 비슷함 dl-dt,dd
+em : 강조된 텍스트(emphasized text)를 표현
+embed : 외부 애플리케이션이나 대화형 콘텐츠를 포함시킬 수 있는 컨테이너(container)를 정의
+fieldset : <form> 요소에서 연관된 요소들을 하나의 그룹으로 묶을 때 타이틀은 legend로 
+figure : 삽화나 다이어그램, 사진 등과 같이 문서의 주요 흐름과는 독립적인 콘텐츠를 정의
+iframe : 인라인 프레임(inline frame)을 정의할 때 사용 ! 인라인 프레임은 현재 HTML문서에 다른 문서를 포함시킬때 사용 
+ins : 텍스트 아래쪽에 라인(line)을 추가하여 문서에 추가된 텍스트를 표현할 때 사용
+kbd : 키보드(keyboard) 입력을 나타낼 때 사용
+label: 사용자 인터페이스(UI) 요소의 라벨(label)을 정의할 때 사용
+main :  <body> 요소의 주 콘텐츠(main content)를 정의
+map : <map> 태그는 클라이언트 사이드 이미지맵(client-side image-map)을 정의할 때 사용합니다. map의 name속성은 img요소의 usemap속성과 결합
+mark : 형광펜으로 칠한 것처럼 하이라이트된(highlighted) 텍스트를 정의
+meter : 분수 값이나 게이지(gauge) 내에서 특정 스칼라 값(scalar measurement)이 어느 정도인지를 표현
+object : 다양한 멀티미디어(오디오, 비디오, 자바 애플릿, 액티브X, 플래시 등)를 웹 페이지에 삽입 body내부요소, data속성이나 type 속성중 하나를 반드시 명시
+pre : pre 미리 정의된 형식(preformatted)의 텍스트를 정의
+progress : 작업의 진행률을 나타낼 때 사용
+
+조건부 플로우 콘텐츠: 
+<area>(<map>의 자손인경우),link(itemprop특성이 있는경우),meta(itemprop 특성이있는경우),style(scoped특성이있는경우)
+3.구획 콘텐츠 : 현재개요에서 <header>,<footer>,제목콘텐츠등 범위를 나누는 구역을 생성하는 요소들
+<article>,<aside>,<nav>,<section>
+4.제목 콘텐츠: 구획으 ㅣ제목을 저으이하는 요소 
+<h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <hgroup>
+** <header>는 제목에 포함하지만 제목콘텐츠는 아님
+5.구문 콘텐츠:텍스트와 텍스트가 포함한 마크업을 정의 
+
+<abbr>, <audio>, <b>, <bdo>, <br>, <button>, <canvas>, <cite>, <code>, <data>, <datalist>, <dfn>, <em>, <embed>, <i>, <iframe>, <img>, <input>, <kbd>, <label>, <mark>, <math>, <meter>, <noscript>, <object>, <output>, <picture>, <progress>, <q>, <ruby>, <samp>, <script>, <select>, <small>, <span>, <strong>, <sub>, <sup>, <svg>, <textarea>, <time>, <var>, <video>, <wbr>, 
+<a>(구문 콘텐츠만 포함하는 경우), <area> (<map>의 자손인 경우), <del>(구문 콘텐츠만 포함한 경우), <ins>(구문 콘텐츠만 포함한 경우), <link>(itemprop 특성이 있는 경우), <map>(구문 콘텐츠만 포함한 경우), <meta>(itemprop 특성이 있는 경우)
+
+ 6.내장 콘텐츠 : 다른 리소스를 가져오거나 다른 마크업 언어나 네임스페이스로부터 문서를 삽입하는요소들
+<audio>, <canvas>, <embed>, <iframe>, <img>, <math>, <object>, <picture>, <svg>, <video>
+
+7.대화형 콘텐츠 
+<a>, <button>, <details>, <embed>, <iframe>, <label>, <select>, <textarea>
+<audio>(controls 속성을 가진 경우), <img>(usemap 속성을 가진 경우), <input>(type=hidden이 아닌 경우), <menu>(type=toolbar인 경우), <object>(usemap 속성을 가진 경우), <video>(controls 속성을 가진 경우)
+
+ -alt 속성: 이미지 요소에는 alt속성을 분명히 제공해야됌
+<area> 요소에도 이미지에 대한 설명 필요함 
+title을 사용하더라도 alt 반드시 필요 
+
+a href = "#와 href="#";의 차이는
+세미콜론이 붙으면 화면최상단으로 이동하지않는다
+a href="#" onclick="sendTo()"
+//  "#" : 아무것도 실행하지는않지만 페이지 최상단으로
+
+
+font -family : 쉼표로 각각 구분된 것들 이름사이에 공백이있기때문에 쌍따옴표로 감싸줘야됌
+
+justify-content:container속성,가로축 - 즉 중심축 가로축 기준 좌우로 정렬
+align-items:container속성 세로축- 즉 교차축
+flex-direction
+Flex의 방향이 column일 경우 justify-content의 방향이 세로로, align-items의 뱡향이 가로로 바뀝니다.
+원래라면 justify 가로축
+align-items 세로축
+align-self 지정된 align-items 값 무시하고 세로선 상에서 정렬
+nowrap: 모든 요소들을 한 줄에 정렬합니다.
+wrap: 요소들을 여러 줄에 걸쳐 정렬합니다.
+wrap-reverse: 요소들을 여러 줄에 걸쳐 반대로 정렬합니다.
+
+flex 정리
+justify-content 가로축 프로퍼티: flex-start , flex-end , center, space-between , space-around
+align-items 세로축 프로퍼티 flex-start,end,center,baseline,stretch
+flex-direction 가로축 프로퍼티 row,row-reverse,column,column-reverse 컨테이너 안 요소들 정렬할 방향지정
+Flex의 방향이 column일 경우 justify-content의 방향이 세로로, align-items의 뱡향이 가로로 바뀝니다.
+order 속성 기본값 0 음수는 앞으로땡김 양수는 뒤로땡김 
+align-self:align-items값들을 인자로 받으며 지정한요소에만 적용
+flex-wrap : 요소들 정렬 ,nowrap 모든요소들 한줄에 정렬 wrap 여러줄에 걸쳐 정렬 
+wrap -reverse 여러줄에 걸쳐 반대로 정렬 
+flex-wrap,flex-direction을 flex-flow로 대신 가능 flex-flow:row wrap
+align-content 여러줄 사이의 간격 지정 flex-start,flex-end,center,space-between,space-around,stretch
+
+position 
+ position: static 상태입니다. (기본적으로 static이라 따로 써주지 않아도 됩니다
+태그의 위치를 살짝 변경하고 싶을 때 position: relative
+ex. position : relative; 
+top,right,bottom,left (
+relative는 각각의 방향을 기준으로 태그 안쪽 방향으로 이동 바깥쪽은 음수 쓰면됌 
+ 보통 태그는 같은 position이면 나중에 나온 태그가 더 위에 배치됩니다
+z-index는 태그들이 겹칠 때 누가 더 위로 올라가는지를 결정하는 속성입니다
+absolute는 position: static 속성을 가지고 있지 않은 부모를 기준으로 움직입니다 
+부모 중에 포지션이 relative, absolute, fixed인 태그가 없다면 가장 위의 태그(body)가 기준이 됩니다.
+그 태그의 밸류값이 적힌 네모난 곳에서 움직임 
+ div 태그의 경우 박스형태로 영역이 설정이 되고 span 태그의 경우에는 줄 단위로 영역이 설정이 됩니다. 
