@@ -1,0 +1,28 @@
+jQuery의 core(코어) 5개
+변수(variables,데이터)
+함수(function)
+객체(objects)
+프로토타입(prototype)
+상속(inheritance)
+jQueryt는 jQuery라는 변수에 저장되있음
+JQuery 변수는 2개 global(전역변수),local(지역변수)
+jQuery의 지역변수 형태
+var jQuery = function(selector,context) { 
+ // jQuery의 지역변수 
+}
+함수는 이름없이 만들어질수있음 이를 (익명함수) anonymous function
+익명함수 형태 function() < 이름이없음 대신 스스로 실행될수있음
+jQuery(day 2)
+라이브러리(library)
+자주 사용하는 코드들을 재사용할수있는 형태로 가공해서 프로그래밍 효율을 높여주는 코드들
+jQuery 란?
+1.자바스크립트 라이브러리
+jQuery는 앞에 $로 시작함 or jQuery 다음 (.'셀렉터문법들어옴') 다음 . 메소드(컨텐츠영역).메소드(
+ )
+jQuery가 제공하는 모든 메소드들은 그 메소드가 리턴될떄 그 메소드가 제어했던 대상을 리턴해줌
+ex) $('.welcome').html('hello world!').css('background-color','yellow');
+ == $('.welcome').css('background-color','yellow'); 
+체인이라고 부름
+jQuery의 문법
+$(제어대상).method1().method2();
+주어 (제어대상) / 서술어 
