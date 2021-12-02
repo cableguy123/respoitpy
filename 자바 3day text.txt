@@ -1,0 +1,12 @@
+ ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(1,2,3));
+    System.out.println(list.get(0)); // 0번쨰 index 출력
+    for(Integer i : list) {
+      System.out.println(i);
+    } // for문 통해 전체출력
+    Iterator iter = list.iterator() // iterator 선언
+    while(iter.hasNext()) {
+      System.out.println(iter.next());
+    }
+// GET은 변수값을 반환하는 목적이기에 return 필요
+// GET <-> SET : SET 은 변수값을 할당하는 목적의 함수이기 때문에 인자를 받아야 하고
+// 클래스 내의변수는 외부에서 함수를 통해서 값을 반환받지 않지 않게하기 위해 PRIVATE

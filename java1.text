@@ -1,0 +1,15 @@
+extends : 상속,즉 부모에있는것들 사용가능 재정의할필요 X 다중상속 x
+implements:부모의 메소드를 반드시 오버라이딩(재정의)해야됌 다중상속 o
+1.extends는 일반클래스,abstract클래스에 상속사용
+2.implements는 interface상속에 사용
+class가 class상속때 extends
+interface가 interface 상속받을때 extends
+class가 interface사용할떄 implements 사용
+interface가 calss 사용할때 implements 사용 X
+extends는 클래스한개만 상속가능 
+implements는 여러개 사용 가능
+<br>
+Toolkit은  image 객체 얻어낼때
+Toolkit.getDefaultToolkit().getScreenSize(); :화면의 크기를 얻어 내는 메소드
+Toolkit.getDefaultToolkit().getImage("로컬경로파일");:로컬 경로 이미지를 얻어 내는 메소드
+BufferedImage클래스는 그래픽 이미지를 직사각형 픽셀의 배열로 나타내는Image클래스를 확장합니다.

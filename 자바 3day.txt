@@ -1,0 +1,30 @@
+java 3-day
+
+wrapper class(래퍼 클래스)
+java.lang 패키지에 포함
+! 인스턴스에 저장된값 변경불가
+Boxing: 기본 타입 -> 래퍼 클래스 변환
+UnBoxing: 래퍼 클래스 -> 기본 타입
+기본 타입 // 래퍼 클래스
+boolean => Boolean
+char => Character
+int => Integer
+double => Double
+byte => Byte
+short => Short
+long => Long
+float => Float
+래퍼 클래스의 동등연산자는 == 이 아니라 equal() 써야됌 인스턴스비교시
+public class Animal {
+} // 클래스
+publice class Main {
+Animal cat,dog //객체
+cat = new Animal() //인스턴스화
+ }
+* 객체 -> 클래스 
+인스턴스화 -> 클래스 -> 인스턴스
+
+ArrayList<> 
+저장용량 초과시 자동으로 크기만큼 저장용량이 늘어남
+ArrayList<String> list = new ArrayList<String>(); => String객체들만 add가능 다른타입객체 X
+ArrayList의 get(index)사용하면 ArrayList의 index값 리턴
