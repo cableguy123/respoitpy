@@ -1,0 +1,62 @@
+자바
+\t 앞 공백 뒤로 땡김
+\n <br>이랑 같음 
+i love pizza => "i love pizza"  
+("\"i love pizza\"")
+<br><br><br><br>
+변수 
+boolean 은 1비트(8바이트) false or true  
+byet -128 ~ 127
+short 2바이트 -32,768 ~ 32,767
+int 4바이트 -2 billion to 2 billion
+long 8비트 -9 to 9 
+float 4비트 3.141592f 6~7digits
+double 8바이트 15digits
+char 2바이트 'f'
+// primitive : 8 types , stores data,can only hold 1 value,less memory,fase
+string varies 
+//reference : unlimited,stores an address,could hold more than 1 value,more memory,
+slower
+<br><br><br>
+스캐너 : sc.next() // 공백 전까지 입력을 받음
+여러가지정보를 받을수있는 클래스 scanner
+sc.nextLine() // 한 줄 전체를 입력 받음
+<br><br> 
+JOPtionPane 클래스 :사용자 입력,확인,알림창 만드는클래스
+1. showInputDialog
+
+2. showMessageDialog
+
+3.showConfirmDialog :
+component: 이 창을 띄우는 component를 지정. null이면 전체 화면 중앙에 출력된다. (ex. frame)
+
+Object msg: 사용자에게 띄울 경고창의 메세지를 입력
+
+title: 다이얼로그 창 위의 문구 설정
+
+optionType: 다이얼로그의 옵션 종류를 지정.(YES_NO_OPTION, YES_NO_CANCLE_OPTION, OK_CANCLE_OPTION)
+
+리턴값: 사용자가 선택한 옵션의 종류(YES_OPTION, NO_OPTION, CANCLE_OPTION, OK_OPTION, CLOSED_OPTION)
+
+4. showOptionDialog
+
+Math.max
+abs  전달된 값이 음수이면 그 값의 절댓값을 반환하며, 전달된 값이 양수이면 전달된 값을 그대로 반환합니다.
+sqrt
+round  전달받은 실수를 소수점 첫째 자리에서 반올림한 정수를 반환
+ceil 인수로 전달받은 값과 같거나 큰 수 중에서 가장 작은 정수
+floor  인수로 전달받은 값과 같거나 작은 수 중에서 가장 큰 정수를 반환
+pow pow() 메소드는 전달된 두 개의 double형 값을 가지고 제곱 연산
+ sqrt() 메소드는 전달된 double형 값의 제곱근 값
+
+
+
+sc.nextInt(), sc.nextDouble() // sc.next+자료형() => 자료형에 따라 입력을 받음
+
+public 은 접근제어자 private -> protected -> public 메인메소드
+static은 정적함수 
+void는 리턴되는값 없음 
+String[]args 
+String은 클래스부분 []은 배열 args는 단순변수명
+
+

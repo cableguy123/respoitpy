@@ -1,0 +1,296 @@
+javascript
+es5 
+es6
+ECMAScript는 Specification의 명칭 같은거임
+ES5=ECMAScript5
+ES6=ECMAScript6.... Specification에 대한 업데이트임
+Specification이란 무엇일까?
+javascript는 꽤나 중앙집중화 되어있어서 누군가 업데이트하면 모든 브라우져에서 작동하게 됨.
+javascript는 Specification인데 체계적인 매뉴얼 같은 것(이걸 적으면 브라우져는 이렇게 나와야 합니다 같은 이렇게하면 에러가 뜹니다 등등) => 요런게 ECMAScript임
+브라우져(crome, firefox, ie...)는 이 specification을 받아서 자기들 방식으로 실행하는 것임. 똑같은 결과물을 보여주려고 노력하는데, 그걸 각자의 방식으로 하는 것임.
+바닐라 javascript는 library가 없는 javascript를 말함.
+ var, let, const
+let 은 변수에 재할당이 가능하다. 그렇지만,
+const는 변수 재선언, 변수 재할당 모두 불가능하다.
+변수 선언에는 기본적으로 con
+st를 사용하고, 재할당이 필요한 경우에 한정해 let 을 사용하는 것이 좋다.
+상수와 객체에는 const 
+var 도 값을 바꿀수있다 
+return의 기능이 함수 내부의 값을 외부로 꺼낼 수 있는 기능을 하기 때문이다. 그래서 외부에서 사용하고 싶으면 꼭!!! 함수 내부에 return 값을 적어줘야 한다. ★
+자바스크립트는 html과 css를 바꾸는 기능을 하지만 이벤트에 반응하기 위해 만들어졌다.
+
+이벤트란? 웹사이트에서 발생하는 것들을 말한다.
+click,resize,submit,input, change, load, before, closing, printing 같은 것들
+
+addEventListener구문
+target.addEventListener(type, listener);
+
+예제)
+function handleResize(){
+console.log("I have been resized")}
+
+resize
+window.addEventListener("resize", handleResize);
+
+handleResize 를 할 때 , 뒤에 ()를 붙이지 않는다. ()를 붙이면 함수가 바로 호출되기 때문
+
+
+
+getAttribute() - 어트리뷰트 값을 가져온다.
+hasAttribute() - 어트리뷰트 값을 가지고 있는지 검사한다.
+setAttribute() - 어트리뷰트에 값을 대입한다.
+removeAttribute() - 어트리뷰트를 제거한다.
+className - 클래스값을 가져오거나 변경한다.
+id - 아이디값을 가져오거나 변경한다.
+
+어트리뷰트 : 속성값  즉 class
+
+// element - 이벤트에 반응할 요소 선택.
+// "event" - 이벤트 바인딩. 어떤 이벤트가 발생했을 때 반응할 것인지 지정.
+// fn - 이벤트 발생 시 실행될 코드.
+// Boolean - 이벤트 버블링 / 캡처링 지정 (false: 버블링, true: 캡처링)
+element.addEventListener("event", fn, Boolean);
+e.target; 					// 이벤트가 발생한 요소를 가져온다
+e.type; 						// 발생한 이벤트의 종류 (click, mouseenter)
+e.cancelable 				// 요소의 기본 동작을 취소할 수 있는지 여부 (true/false)
+e.bubbles 					// 버블링 발생 여부 (true/false)
+e.preventDefault() 	// 이벤트의 기본 동작을 취소한다.
+e.stopPropagation() // 이벤트의 캡처링이나 버블링을 중단한다.
+e.screenX 					// 모니터 상에서 커서의 X 위치
+e.pageX 						// 문서 페이지를 기준으로 한 커서의 X 위치
+e.pageY 						// 문서 페이지를 기준으로 한 커서의 Y 위치
+e.clientY 					// 웹브라우저 내부 화면에서 커서의 Y 위치
+e.keyCode 					// 각 키의 ASCII 코드
+e.eventPhase				// 1= capture, 2= target, 3= bubbling
+e.currentTarget			// 캡처링/버블링 시 리스너 대상
+
+
+document.querySelector('.xyz') : 클래스값이 xyz인 첫번째 요소에 접근
+document.querySelector('#id')
+document.querySelector('p')
+document.querySelectorAll( '.abc' ) : 클래스값이 abc인 모든요소에 접근
+
+
+Ajax 
+언어나 프레임워크가 아니 구현하는 방식을 의미 
+데이터를 이동하고 화면을 구성하는데 있어서 웹화면을 갱신 X , 필요한 데이터를 서버로 보내고 가져오는방법
+Server -> Client
+Client -> Server
+동기식 데이터 전송
+서버로 데이터를 요청하고 응답이오는 시간동안 작업을 멈추고 기다리는것
+ex) 로그인할때 아이디와 패스워드 입력 후 서버로 전송 -> 서버로 부터 응답 성공= 로그인 성공 , 실패
+
+(2).Ajax 데이터 전송
+서버로 데이터를 요청하고 응답을 기다리는동안 웹은 자신의 다른업무를 진행하고 응답이오면 그후 작업을 진행
+Ajax의 데이터 전송 형식은 크게 CSV,JSON,XML 형식
+
+CSV형식은 데이터의 속성을 ,로 나누고 줄바꿈으로 데이터나눔 용량이 적고 , 가독성이떨어짐
+XML 형식은 HTML 형식처럼 <head> 나누는것 태그로 속성과 데이터를 구분, 가독성은좋으나 용량이크고 데이터가많아 분석속도가 떨어짐
+JSON 형식 현대의 데이터 전송 형식 가독성도 좋고 용량이적음,데이터가많으면 분석속도가 떨어짐
+
+데이터 전송 방식은
+GET,POST,PUT,DELETE,HEAD가 있음
+get : 지정한 url의 데이터를 열람하기 위한 메소드
+post : 지정한 url에 데이터를 생성하기 위한 메소드
+put : 지정한 url의 데이터를 갱신하기 위한 메소드
+delete : 지정한 url의 데이터를 삭제하기위한 메소드
+head : 지정한 url의 헤더 정보를 요청하는 메소드
+GET방식의 경우 데이터를 단순히읽어오는경우,POST는 데이터를 생성,수정,삭제하는경우
+
+
+Ajax구현부분
+onreadystatechange : 비동기 통신시 서버와의 통신이 이루어진후 동작될 함수
+send : 데이터 교환을 요청하는 함수
+open(GET,POST,url,async) : 서버와 데이터를 교환할떄 필요한 정보를 입력 첫번쨰 인자값은 Get,Post 지정
+두번째 인자값은 데이터 교환할 서버의 url,세번쨰는 비동기로 진행할것인지 true 비동기 
+
+readyState : ajax통신의 진행중인 상태를 알려줍니다 값에따라 상태가다름
+0:초기화 X (open메소드 호출 안됌)
+1:open메소드가 호출된상태(send메소드는 호출되지않은상태)
+2:송신완료,요청을 시작한상태(요청 X,데이터가 아직 안옴)
+3:수신중(데이터가 들어오고있음)
+4: 수신완료 (데이터를 다 받음)
+Status:데이터의 수신 성공 여부 판단해주는 속성
+0:로컬로 접근 성공
+200:해당 url로 접근성공 
+403:접근거부
+500:서버오류
+responseXML : 받은 데이터를 XML타입으로 변환 
+responseText: 받은 데이터를 텍스트 타입으로 변환 
+innerText,innerHTML
+ element.innerText = "<div style='color:red'>A</div>"; 
+innerText =  element.innerText = "<div style='color:red'>A</div>";
+innerHTML =  element.innerText = A 
+empty() 선택한 요소의 내용을 지움 태그는 아직있음
+태그까지 지울려면 .remove()
+ready() : DOM트리 생성완료후 호출
+.each(): 선택한 요소가 여러개일떄 각각에 반복하여 함수 실행 반복작업빠질려면 return false;
+.find() : 어떤요소의 하위요소중 특정요소찾을때 사용
+this == $(this)[0]
+this는 해당이벤트가 발생한 요소를 표시
+$(this)는 이벤트가 발생하면 발생한 태그를 Object형태로 감싸서 보여줌
+
+ex ) filterSelect.on("change", function(e) {
+	console.log(this);
+    console.log($(this));
+})
+this = filterSelect의 요소 다 표시함
+$(this) = 0:select.filterSelect  length: 1 , 오브젝트로 감싼다
+.attr(속성)
+// 선택한 요소의 속성값을 가져옵니다
+getJSON <-> ajax 
+getJSON은 async,type 옵션 사용 X
+---
+JS module
+개발하는 어플리케이션의 크기가 커질수록 파일을 여러개로 분리해야되는데
+이떄 분리하는 파일 각각을 '모듈(module)'라고 부름
+모듈시스템은 AMD,CommonJS,UMD
+스크립트하나=모듈하나
+모듈에 특수한 지시자 export,import 적용하면 다른모듈을 불러와 불러온 모듈에있는 함수를 공유
+export:모듈 내보내기,지시자를 변수나 함수앞에붙이면 외부 모듈에서 해당변수나 함수에 접근가능
+import:모듈 가져오기,지시자를 사용하면 외부 모듈의 기능을 가져옴
+
+모듈과 스크립트의 차이점 : 
+1.모듈은 항상 use strict 로 실행 
+2.모듈은 자신만의 스코프가있기에 모듈내부에서 정의한 변수나 함수는 다른스크립트에서 접근 X
+ex.<script type="module">
+3.동일한 모듈이 여러곳에 사용되더라도  모듈은 최초호출시 단 한번만 실행
+4.같은 객체에서 가져오면 1.js로 수정뒤 2.js로 실행 한번 가능(즉,어느 한 모듈에서 객체수정하면 다른모듈에서 변경)
+
+import.meta 객체는 현재 모듈에 대한 정보를 제공
+! HTML안에 있는 모듈이라면 현재 실행중인 웹페이지의 URL정보를 얻음
+ex.alert(import.meta.url)
+
+5.모듈 스크립트는 HTML문서가 완전히 준비될때까지 대기 상태 , HTML문서가 완전히 만들어진 이후 실행 
+6.문서상 위쪽의 스크립트부터 차례로 실행
+
+!! defer 속성
+일명 지연스크립트 script src="" 없으면 실행 X 외부스크립트이기에
+HTML문서용량이 크면 지연되기에 스크립트가 그래서 defer를 써서 지연스크립트 다운하는도중에도 HTML파싱 안멈춤
+페이지 구성이 끝날때까지 defer스크립트 실행은 지연됨
+---
+!!async 속성
+async 속성이 붙은 스크립트는 로딩이끝나면 다른스크립트나 HTML문서가 처리되는걸 기다리지않고 바로 실행
+외부스크립트라 src =""X 
+script async type 
+
+script.async = false가 있으면 실행은 문서에 추가된 순서대로함
+원래라면 크기가 작은것부터 실행됌
+ ---
+import는 반드시 상대,절대 URL앞에와야됌 경로가없는 모듈 허용  X
+
+async <-> defer
+defer은 문서에 추가된 순부터 실행
+async 문서내 순서와 상관없이 먼저 다운로드된 스크립트가 먼저 실행됌
+load-first order
+
+
+<script>
+HTML 파싱 -> 파싱 멈춤(스크립트다운로드->스크립트 실행)->HTML 파싱
+
+<script async>
+HTML 파싱 (스크립트 다운) -> 파싱멈춤(스크립트 실행) -> HTML 파싱
+
+<script defer>
+HTML파싱(스크립트다운) ------ 스크립트 실행
+
+
+---
+JS ES6+ 문법
+num 2 : '+num2+' or ${num2}
+const f =(x,...y) => x*y.length 
+f(10,2,3,4,5); => 10 * 4 = 40
+...y = y.length
+
+for of
+for in 보다 가볍게 사용가능
+for of는 반복도중 종료가능 forEach는 불가능
+for(const v of [10, 20, 30]){
+  console.log(v);
+  if(v === 10) return;
+}
+[10, 20 ,30].forEach(v => {
+  console.log(v);
+  if(v === 10) return;
+})
+object에 값을 할당할시 key,name과 value의 variable name이 같을경우 생략이 가능하다
+var a = 10, b = 20, c = 30;
+var obj = { a: a, b: b, c: c};
+
+const a = 10, b = 20, c = 30;
+const obj = {a, b, c};
+
+변수 선언시 변하지않는 값은 const 변하는 값은 let으로 사용
+ex.상수는 const 
+static 정적 메서드
+constructor()   생성자 메소드
+someMethod() 클래스 메소드
+클래스 상속할떄는 extends 키워드 뒤에 부모클래스 
+템플릿 ES6 리터럴 문법은 ` 백틱으로 감싸진 문자열
+${expression}
+
+
+function* = 제네레이터 , Generator 생성자 = 제네레이터
+제네레이터는 코드의 진행흐름에서 잠시빠졌다가 다시 돌아올수있는함수
+
+Promise 프로미스
+비동기 처리가 추상화된 객체 , 사용자가 작성한 비동기 처리가 완료or실패인지 결괏값반환해줌 Boolean
+const p = new Promise((resolve,reject) => { 
+비동기가 처리 필요한 코드
+});
+p.then(onFulfilled, onRejected).catch(errorCallback);
+
+실행자 내부에서 reslove 실행 -> onFulfilled가 받고
+reject 실행 -> onRejected 받음
+Number.isNaN()
+값이 유형이 Number이고 값이 NaN이면 true 아니면 false
+NaN : 숫자가 아님
+여러개의 Promise 사용시(비동기 여러개 처리할시)
+Promise.all,Promise.race 사용하면됌
+Promise.all은 모든 프로미스가resolve될 때까지 기다리고Promise.race는 가장 먼저resolve` 되는 프로미스의 이행 값을 사용한다
+
+
+.then(function(value) {//이행},function (reason) {//거부 }
+
+
+호이스팅 : 변수가 선언되기도 전에 변수와 함수 실행 코드가 입력되어도 에러가 나지 않는데, 이는 코드가 호이스팅 되기 때문이다.
+num = 6 ; // 변수선언 X
+var num; 나중에 변수선언 
+num; // 정상출력됌 
+! let/const 선언과 함수표현식에서는 안일어남
+
+---
+이벤트 핸들링?
+addEventListener : 지정한 이벤트가 대상에전달될때마다 호출할 함수불러옴 ! IE하위버전에서는 (attachEvent / detachEvent )  
+removeEventListener : 등록한 이벤트 리스너를 제거한다
+stopPropagation : 이벤트가 버블링 되지않게 하기위해 사용하는 메소드 (유사메소드 preventDefault():근데 얘는 전파가아니라 이벤트 자체를 취소함 )
+ 
+! 버블링 이란 ? 이벤트가 부모에서 발생해서 자식으로 전파되는것 - 캡쳐링 capturing 
+반대로 자식부터 부모로 이벤트 전파되는것 - 버블링 bubbling (!실제 이벤트가 발생하는 요소 타겟Target이 있다) 
+ex. target.addEventListener(type,listener[,useCapture]); 
+useCapture : Boolean 이벤트 전송여부 표시 버블링할래? 캡쳐링할래? default값이 false이기에 인자값 입력안하면 그냥 버블링됌
+
+---
+
+스코프란 ?
+변수에 접근할수있는 범위정도로 이해하면 됌 타입이 2가지인데
+전역 스코프:어디서는 접근가능
+지역 스코프: 선언된 변수에만 접근가능
+---
+프로토타입이란?
+모든객체는프로토타입으로부터 프로퍼티(객체를 규정하는특징,키와값으로구분),메소드(프로퍼티값이 함수일경우 이를 메소드라 부름) 상속 받는다
+
+--
+shadow DOM
+원래의 DOM트리에서 완전히 분리된 고유의 요소와 스타일을 가진 DOM트리
+DOM의 일반 HTML요소에 shadow host 생성 shadow host에 shadow DOM를 붙이기위해 attachShadow() 메서드 사용
+const shadowE1 = document.querySelector(".shadow-host");
+const shadow = shadowE1.attachShadow({mode:'open'}); // shadow host의 자식요소 = shadow root 생성 = shadow DOM의 시작점
+이 다음 shadow tree 생성 (appendChild() 사용해서 새로운 요소를 shadow DOM에 추가) 
+shadow.appendChild(link);
+
+---
+String Mode (엄격모드)
+자바스크립트의 sloppy mode 해제하기위한 방법
+'use strict';
+

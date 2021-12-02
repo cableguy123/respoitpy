@@ -1,0 +1,40 @@
+body {
+  background-color: rgb(9,17,26);
+}
+td {
+  width: 14px;
+  height: 14px;
+}
+#gameField {
+  float: left;
+  margin-left: 20px;
+  margin-top:20px;
+}
+#scoreField {
+  float:right;
+  background-color:rgb(9,17,26);
+  margin-top: 1.9px;
+  margin-left:3px;
+  width: 100px;
+
+}
+#score,#level {
+  font-size: 28px;
+  text-align: center;
+  font-weight: bold;
+  color:white;
+  height: 30px;
+
+}
+.sub {
+  font-size:22px;
+  text-align:center;
+  font-weight: bold;
+  color:white;
+  
+}
+.help {
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+}

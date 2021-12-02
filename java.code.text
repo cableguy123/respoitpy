@@ -1,0 +1,15 @@
+접근제어자 반환타입 메소드이름(매개변수) { 
+} 
+Car myCar = new Car(); 객체 생성
+myCar.acclerate() myCar인스턴스에 accelerate()메소드 호출
+class Car { 
+static int modelOutput; // 클래스 변수
+String modelName // 인스턴스변수
+void method() { 
+int something = 10; // 지역변수
+}
+Field myField1 = new Field() // 인스턴스 생성
+void operDoor() { } int add() {} 
+// 인스턴스 메소드
+static void toggleDoor() { } // 클래스 메소드
+
