@@ -1,0 +1,19 @@
+OTA0Njc5NDMxMDQwMjcwMzM3.YX_CYA.oUGpeGF2EGtna2Ts4hKYsIaRl_8 토큰 값
+904679431040270337 클라이언트 값
+jquery text() 메소드 : 태그는 제외한채 문자열만 출력하고자할떄 
+
+ex  $("#score").text(score) #score가 감싸고있는 텍스트는 score로 변경됩니다
+
+function test() { }
+setInterval(test,3000);
+// 3초에 1번식 test라는 함수를 실행
+clearInterval(test);
+// 인자로 함수이름 넣어주고 현재진행되고있는 함수의 진행 멈춤;
+setTimeout()
+// 일정시간이 지난후 인자로받은 함수를 한번 실행해주는 메소드 
+// 실행후 return 값 상수로 리턴 실행할떄마다 1씩추가되어 리턴
+setTimeout의 리턴값은 상수,상수는 항상 true
+.attr(속성,value)
+.attr(속성)
+// 선택한 요소의 속성값을 가져옵니다
+("#computer").attr('class') #computer의class속성값을 가져옵니다

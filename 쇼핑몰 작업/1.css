@@ -1,0 +1,79 @@
+/* 
+a[href*="naver"] {
+  color:red;
+}
+a[href^="http"] {
+  color:black;
+}
+a[href$=".jpg"] {
+  color:skyblue;
+}
+a[data-filetype="Image"] {
+  color: wheat;
+}
+a[data-info~="image"] {
+  color: green;
+  color: coral;
+  color: #ddffdd;
+  color: #ffdddd;
+}
+div:not(#container) {
+  color: brown;
+}
+
+아이디값 #container만 제외한 모든 div 선택
+img + span // img 뒤에오는 첫번쨰 span만! 선택해서 효과줌  뒤에는 효과 X
+img > span // img 뒤에오는 모든 span  선택 효과 적용 
+h1 ~ h2 // 같은계열에있어야되고 , h1태그뒤 모든 태그의 h2 적용
+a[href*="naver"] : 주소창에 naver가 들어가는 모든앵커 태그 선택
+
+ */
+ :root {
+   --webkit-color-1 : white;
+   --webkit-color-2 : skyblue;
+   --webkit-color-3 : black;
+   --webkit-color-4 : wheat;
+   --webkit-color-5 : brown;
+ }
+ #container {
+   display: flex;
+  border: 3px solid currentColor;
+   justify-content: center;
+  
+    border-radius: 5px;
+    font-size: 1.2em;
+    line-height: 1.4;
+    background: #ffe300;
+    transition: 0.5s;
+
+ }
+ .item {
+  margin: 3px;
+  padding: 2px;
+  border: 3px solid currentColor;
+  border-radius: 3px;
+  font-weight: bold;
+  background: #26ab1c;
+  transition: 0.4s;
+  flex-basis: 100px;
+  width: 100px;
+  flex-grow: 1;
+
+ }
+ .item:nth-child(1) {
+  grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 2;
+ }
+ @media screen and (min-width:200px) and (max-width:400px) and (aspect-ratio:24/16) {
+   #container { 
+     width: 100%;
+     height: 100%;
+   }
+   .item {
+      width: 100%;
+      height: 100%;
+   }
+   ;
+ }

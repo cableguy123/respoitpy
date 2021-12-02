@@ -1,0 +1,18 @@
+로컬 버전관리
+VCS(Verrsion Control System) 
+1.디렉토리로 파일을 복사하는 방법을 쓴다
+RCS(Revision Control System)인데
+기본적으로 Patch Set(파일에서 변경되는부분)을 관리한다
+프로젝트 진행할시 다른개발자와 협업할떄는
+CVCS(중앙집중식 버전관리)
+클라이언트가 중앙서버에서 파일을 받아서 사용(Checkout)
+CVCS는 문제가
+서버가 `1시간동안 다운되면 협업X
+
+분산버전관리(DVCS)
+Checkout없음 
+
+Git
+Committed : 데이터가 로컬 데이터베이스에 안전하게 저장됐다
+Modified : 수정한 파일을 아직 로컬 데이터베이스에 커밋X
+Staged : 현재 수정한 파일을 곧 커밋할것

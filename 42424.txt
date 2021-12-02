@@ -1,0 +1,125 @@
+unicode-bidi : 동일한 문서에서 여러 언어를 지원하도록 텍스트 방향 재정의.
+vertical-align
+text-transform:대 소문자 바꿔줌
+text-indent: 들어쓰기 내어쓰기 내어쓰기는 첫줄제외 나머지줄이 설정한값만큼 왼쪽으로 이동
+들어쓰기는 첫줄을 제외한 나머지는 그대로 둠
+letter-spacing:글자 간격조절
+line-height:줄 간격 지정
+word-spacing:인라인 요소 ,인라인 블록 요소에 영향 단어에 간격조절
+white-space:공간 여백 -normal  norwrap pre pre-wrap , pre-line n-공백1개만 표시 pre-공백그대로 표시 line은 1개만 표시
+줄바꿈 norwrap,pre는 x안됌
+div + p : div 에 속한 p태그 제외 p태그 첫줄만 적용
+div > p : 부모 자식 
+div ~ p : div 코드 적용 x
+링크 색깔 클릭x 링크 a:link
+방문한거 a:visited 
+마우스 갖다댄거 hover
+누르고있기 active
+font properties
+color properties
+background properties
+word-spacing
+letter-spacing
+text-decoration
+vertical-align
+text-transform
+line-height
+clear
+function solution(numbers, hand) {
+
+    function dis(num, lH, rH, pos, hand){
+    const lD = Math.abs(pos[lH][0] - pos[num][0]) + 
+        Math.abs(pos[lH][1] - pos[num][1])
+    const rD = Math.abs(pos[rH][0] - pos[num][0]) + 
+        Math.abs(pos[rH][1] - pos[num][1])
+
+    if (lD === rD) return hand === 'left' ?  'L' : 'R';
+    return lD < rD ? 'L' : 'R'
+}
+
+    const pos = {
+        1: [0, 0], 2: [0, 1], 3: [0, 2],
+        4: [1, 0], 5: [1, 1], 6: [1, 2],
+        7: [2, 0], 8: [2, 1], 9: [2, 2],
+        '*': [3, 0], 0: [3, 1], '#': [3, 2]
+    };
+    var lH = '*', rH = '#';
+    var result = ''
+    for (var num of numbers){
+        if (num % 3 === 1){
+            result += 'L';
+            lH = num;
+        }
+
+        else if (num !==0 && num % 3 === 0){
+            result += 'R';
+            rH = num;
+        }
+        else{
+            result += dis(num, lH, rH, pos, hand)
+            result[result.length-1] === 'L'? lH = num : rH = num
+        }
+    }
+
+    return result;
+}
+function solution(numbers, hand) {
+    var answer = '';
+    function dis(num,pad,lF,rF,hand) {
+        const lD = Math.abs(pad[lF][0] - pad[num][0]) + Math.abs(pad[lF][1] - pad[num][1]);
+        const rD = Math.abs(pad[rF][0] - pad[num][0]) + Math.abs(pad[rF][1] - pad[num][1]);
+        if(lD === rD ) return hand === 'left' ? 'L' : 'R';
+        return lD < rD ? 'L' : 'R'; // lD < rD 조건문 if 'L ' else 'R'
+}
+    const pad = { 
+        1: [0, 0], 2: [0, 1], 3: [0, 2],
+        4: [1, 0], 5: [1, 1], 6: [1, 2],
+        7: [2, 0], 8: [2, 1], 9: [2, 2],
+        '*': [3, 0], 0: [3, 1], '#': [3, 2]
+    };
+    var lF = '*' , rF = '#';
+    var result ='';
+    for(var num of numbers) { 
+        if(num % 3 === 1) {
+            result += 'L';
+            lF = num;
+} else if(num % 3 === 0 && num !== 0) { 
+    result += 'R';
+    rF = num;
+}
+        else {
+            result += dis(num,pad,lF,rF,hand)
+            result[result.length-1] === 'L' ? lF = num : rF = num // result 10 numbers 9 
+        } 
+        
+
+    }
+    return result;
+}
+1.n의 각 자릿수를 큰것부터 작은순으로 정렬한 새로운 정수로 리턴 
+내림차순 b-a ? 이건 근데 배열임 당연히 이건 실패
+2.문자열로 변환후 정수 리턴
+toString , '' 필요
+문자열 변환후 반복문한다음 반복문 안에 내림차순
+
+function solution(n) {
+var answer = 0;
+var nArr = [];
+var tmp = 0;
+for(var i = 0; i<n.length; i++){
+nArr[i] = n[i];
+}
+
+for(var x = 0; x<nArr.length; x++){
+    for(var y = x+1; y<nArr.length; y++){
+        if(nArr[x]<nArr[y]){
+            tmp = nArr[y];
+            nArr[y] = nArr[x];
+            nArr[x] = tmp;
+        }
+    }
+}
+answer = nArr.join("");
+return answer;
+}
+

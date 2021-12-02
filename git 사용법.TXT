@@ -1,0 +1,126 @@
+git 개념
+
+commit (커밋) : 파일을 추가하거나 변경내용을 저장소에 저장하는 작업
+push (푸쉬) : 파일을 추가하거나 변경 내용을 원격 저장소에 업로드하는 작업
+
+저장소가 2개가있는데 "로컬 저장소" , "원격 저장소 "
+로컬 : 자신의컴퓨터에있는 저장소
+원격저장소 : 서버 등 네트워크에있는 저장소
+기본은 로컬저장소 (작업수행) -> 원격저장소(결과저장)
+---
+
+Github에 저장소 작성 (git init) or 복제 (git clone)
+
+git init : 현재 디렉터리를 Git 저장소로 변환
+git add: 파일을 원격 저장소에 추가 ex. git add 파일명
+git commit: 디렉토리의 변경과 추가를 저장소에 기록 ex.git commit -m "New File"
+git push: 로컬 저장소의 변경사항을 github에 반영  ex.git push origin master
+git checkout : 현재위치하고있지않은 저장소를 체크아웃합니다 ex. git checkout master
+git merge : 브랜치 작업끝내고 합치는과정
+git pull : 로컬 저장소 작업할때 최신버전 불러옴 저장소의
+
+
+--
+
+git bash 명령어
+cd 폴더이름 : 해당 폴더로 이동
+$ cd documents 현재폴더의 하위폴더인 document폴더로 이동
+$ cd /c/workspace  절대경로 /c/workspace로 이동
+$ cd .. 상위폴더로 이동
+$ cd myapp myapp 폴더 생성
+commit 한다는것 = 해당파일을 저장한다
+--
+mkdir 폴더이름 
+폴더 생성 
+$ mkdir workspace 현재폴더에 workspace 폴더생성
+--
+touch 빈 파일을 생성
+$ touch index.js 현재폴더에 index.js 생성
+
+---
+ls 현재 디렉톨 ㅣ안에있는 파일,폴더들 보여줌
+(master)orbranch 이름이 보인다면 해당 폴더는 git저장소가 설정된 폴더 
+--
+$ git init 해당 폴더에 git 사용할것을 알림
+git add . 현재 폴더의 파일들과 하위 폴더의 파일 모두를 저장할 대상으로 지정합니다.
+add가 명령어고  .가 옵션 .대신 -A 사용 해도됌
+git commit -m "메세지" ﻿commit 을 생성합니다.
+commit이 세이브 -m은 저장과 동시에 메세지를 남기는 옵션 
+git log --oneline 현재 저장된 commit list를 보여줍니다
+--oneline은 한 commit를 요약해서 한줄에 보여주는 옵션 
+git reset --hard [commit id] 해당 commit으로 돌아갑니다.
+:
+git reset의 option은 --hard,--soft가 있는데
+--hard : commit당시의 상태를 완전히 되돌리고
+--soft : git commit만 취소하고 파일들은 현상태 유지
+ex --soft쓰고 git log 하면 text.txt는 사라지지않고 보이지만 않음
+--hard 썼기에 없어짐 
+
+---
+git remote add origin [git 온라인 저장소 주소] origin에 온라인(remote) 저장소 주소를 등록(add)합니다.
+git push -u origin master origin에 master branch를 업로드합니다.
+git clone "[git 온라인 저장소 주소]" 온라인 저장소에서 코드를 받아옵니다.
+
+---
+
+$ cat ~/.gitconfig에 다음 내용을 추가
+ex $git config --global user.name 등
+--
+전역 설정 삭제
+$ git config --global --unset user.name
+$ git config --global --unset user.email
+
+--
+개별 저장소 삭제
+$ git config --unset user.name
+$ git config --unset user.email
+
+--
+
+git  저장소의 커밋과정은 크키워킹트리 ,  Index , HEAD로 나눠짐
+1.워킹트리에서 파일 변경 작업
+2. 이 중 커밋할 내용을 stage해서 index에 추가하고(git add)
+3. 이를 커밋하면 index의 내용이 커밋으로 만들어지고(git commit) 
+4.HEAD는 최신커밋을 가르킴
+
+--
+git status 현재 상태
+파일을 index에서 삭제시킬려면
+git rm --cached <file>
+git reset HEAD를 실행하면 index에 반영된 모든내용이 취소됌
+인자로 파일경로 지정시 해당파일만 reset
+git restore --staged [FILE...]로도 가능
+
+--
+
+git 브랜치
+git branch
+git branch --list 
+목록 확인법
+
+$git branch --list 'feature/*' : 기능 개발 브랜치만 찾아봄
+git branch -d: 브랜치를 삭제하는 방법
+ex git branch -d BRANCH_NAME
+ or git branch --delete BRANCH_NAME
+
+--
+master 브랜치에서 main으로 가는법
+git branch -M main
+git commit –amend: 커밋 덮어쓰기
+
+--
+
+git
+작업 공간(Working Directory) ---->(add) ---> 준비 영역(Staging Area ) ------commit---->로컬저장소(Local Repository)----push---->원격저장소(Remote Repository)
+작업 공간 : 올리고자하는 파일이있는곳 이 공간에 Git생성
+준비 영역 : add를 통해 작업공간에 파일들이 저장됌 로컬저장소에 commit 되기전 거쳐가는 영역 
+!준비영역을 거치지않고  commit도 커밋가능하다
+로컬 저장소:준비 영역에 있던 파일들을 commit하게되면 로컬저장소로 저장,최종버전
+원격 저장소 : 로컬저장소의 파일들이 push를 통해 원격 저장소로 올라감
+
+ex. 로컬 저장소는 올리고자하는 폴더에 git bash here->git init 하면 그 폴더가 로컬 저장소로 지정
+
+! 빨간글씨체로 보여지는  파일목록은 추적되지않은파일들 (Untracked files) 
+추적되지않은파일? 준비영역이나 로컬저장소에 한번이라도 add되거나 commit되지않은 파일
+반대로 추적상태인 파일들(Tracked files)은 최소 한번은 git add 명령을 통해 준비영역에 포함,commit을 통해 로컬저장소에 저장된 파일
+
